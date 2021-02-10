@@ -1,0 +1,144 @@
+
+
+Section 2: Git Basics: First steps
+
+####################################(Tell Git Who u are)#############################################
+git config --global user.name "Ashish Singh" (Author)
+git config --global user.email "ashishkumar2017@gmail.com"
+git config user.name
+git config --list
+Change text editor>
+git config --global core.editor "C:/Program Files/Notepad++/notepad++.exe"
+git config --global core.editor "notepad"  (set notepad as editor)
+
+#####################################(Modified=>Staged=>Commit)##################################
+git add file_name.extension (add file to staging area)
+git add *.java
+git status (To check the status of files whether tracked and untracked)
+git status -s (s shows in short form)
+git commit -m "Init Commit" (Moves the staged files to commited)
+git status --help (Opens status documentation in HTML format)
+git status -h     (Open manual in the cmd itself)
+git commit -a -m "New Changes" (Will Stage the changes and commit)
+
+##########################################(Git-Ignore)##################################################
+git rm --cached .ignore_me.txt(Cached to remove the file from git but not the directory)
+git rm -r --cached  bin/  (For Directories to be removed from Git)
+touch .gitignore      (To Create New File)
+nano .gitignore
+Names of files to ignore  in .gitignore
+{
+bin/    (Ignore all files in bin/)
+ignore_me.txt
+}
+nano .gitignore //nano is text editor
+git add .
+git commit -m "Commit with .gitignore"
+git log  -2 (To see last 2,2 is optional the commits made )
+git log --pretty=oneline (to see Hash and the message for commit)
+##########################################(Git Undoing)##########################################
+(Amend  last commit)
+git add .
+git commit --amend   (Uses current staging area to create commit with same message)
+(vim editor opens modify the name and then save it using :wq staged files will commit)
+(Add modifications to file with same commit message)
+git add .
+git commit --amend --no-edit
+git restore --staged file_name.ext (To unstage the staged file)
+git restore path/file_name.ext    (unstaging if staged is important To undo the changes made to the unstaged specified file to last commit)
+
+###############################################################################
+
+                    MODULE 3 REMOTE REMOTE REPOSITORIES
+
+##############################################################################
+
+Github  
+Bitbucket
+GitLab
+(To check our local repository is connected to any remote repository or not )
+git remote -v
+(USING HTTP)
+git remote add origin https://github.com/ashishsingh2022/Git-Guide.git  (To add remote repository)
+Instead of these commands 
+{
+git branch -M main          (this use I do not know)
+git push -u origin main    (u is upstream)
+}
+use these
+{
+git push origin -u master
+}
+(To clone repository using http go to the directory and use the command)
+git clone https://github.com/ashishsingh2022/Git-Guide.git
+
+
+
+##########################################################################
+                     Modue 4 SSH
+##########################################################################
+git remote set-url origin git@github.com:ashishsingh2022/Git-Guide.git (To change remote repository)
+git remote -v
+git push origin master
+or
+git push
+
+
+##########################################################################
+                     Modue 5 Branch Management & Pull Requests
+##########################################################################
+git branch TA01                 (To create new local branch)
+git branch                       (To view local branches)
+git branch -r             (To view remote branches)
+git branch -a                (To view all local+remote branches)
+git checkout -b TA001           (To create and switch to new branch)
+touch Disc.txt                              (To create a new file)
+git commit -m "This is a local commit"          (This commit is a local commit)
+git log -2                              (Shows commit on a current branch)
+git commit --all                 (To view all commit)
+git log TA001
+git checkout master                 (To switch back to original branch already created)
+git checkout thisishashofcommit       (Already comited is called detached head state as can no)
+git push origin -u TA001               (To push the branch to new branch)
+git branch -d TA001                (To delete the local branch)
+git push origin --delete TA001            (To delete the remote branch)
+git switch master                      (To switch to already created master branch)
+git switch -c new_branch                 (To create and switch to a new branch)
+-------------------------------------------------------------------------
+git fetch                                  (To search the cnanges in remote repository wrt local repository)
+git merge                                   (To merge those changes to the local repository)
+git pull                                  (To fetch+merge the remote repository changes)
+-------------------------------------------------------------------------------------------
+
+##########################################################################
+                     Modue 4 MERGE CONFLICTS
+##########################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
